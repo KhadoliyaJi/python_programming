@@ -1,0 +1,12 @@
+# Write your solution here
+num1 = int(input("Number1:"))
+num2 = int(input("Number2:"))
+operation = input("Operation:")
+print("")
+
+if(operation=='add'):
+    print(f"{num1} + {num2} = {num1+num2}")
+if(operation=='multiply'):
+    print(f"{num1} * {num2} = {num1*num2}")
+if(operation=='subtract'):
+    print(f"{num1} - {num2} = {num1-num2}")
