@@ -34,7 +34,7 @@ def spruce(size):
     print(" " * (size - 1) + "*")
 
 
-if __name__ == "__main__":
-    spruce(5)
-    print()
-    spruce(8)
+# if __name__ == "__main__":
+#     spruce(5)
+#     print()
+#     spruce(8)
