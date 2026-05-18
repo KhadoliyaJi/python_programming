@@ -14,20 +14,29 @@
 
 ## Solution:
 
-def palindromes(string):
-    result = ''
-    new_string = ''
+# def palindromes(string):
+#     result = ''
+#     new_string = ''
     
-    for i in range(len(string) - 1, -1, -1):
-        new_string += string[i]
+#     for i in range(len(string) - 1, -1, -1): # in range function, it is compulsary to specify at least one parameter(to stop it)
+#         new_string += string[i]              # output of range function is an intiger value 
     
-    # if new_string == string:
-    #     result = True
-    # else:
-    #     result = False
-    # return result
-    return new_string == string     # Here the condition itself gives a boolean value i.e. True or False
+#     # if new_string == string:
+#     #     result = True
+#     # else:
+#     #     result = False
+#     # return result
+#     return new_string == string     # Here the condition itself gives a boolean value i.e. True or False
  
+
+## another version:
+def palindromes(string):
+    new_string = ''
+
+    for char in string[::-1]:
+        new_string += char
+    return new_string == string 
+
 
 while True:
     input_string = input("Please type in a palindrome: ")
