@@ -13,13 +13,14 @@
 def anagrams(string_1 , string_2):
     sorted_s1 = sorted(string_1)
     sorted_s2 = sorted(string_2)
-    result = ''
-    if sorted_s1 == sorted_s2:
-        result = True
-    else:
-        result = False
+    # result = ''
+    # if sorted_s1 == sorted_s2:
+    #     result = True
+    # else:
+    #     result = False
+    # return result
+    return sorted_s1 == sorted_s2
 
-    return result
 
 if __name__ == "__main__":
 
