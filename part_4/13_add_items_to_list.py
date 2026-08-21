@@ -13,18 +13,25 @@
 
 ## Solution:
 
+# my_list = []
+# range = int(input("How many items: "))
+# index = 1
+# limit = 1
+
+# while limit <= range:
+#     list_value = int(input(f"Item {index}: "))
+#     my_list.append(list_value)
+#     index += 1
+#     limit += 1
+# print(my_list)
+
+num = int(input("How many items: "))
+count = 1
 my_list = []
-range = int(input("How many items: "))
-index = 1
-limit = 1
 
-while limit <= range:
-    list_value = int(input(f"Item {index}: "))
-    my_list.append(list_value)
-    index += 1
-    limit += 1
+while count <= num:
+    my_list.append(int(input(f"Item {count}: ")))
+    count += 1
 print(my_list)
-
-
 
 
