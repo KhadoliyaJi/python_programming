@@ -14,23 +14,40 @@
 
 ## Solution:
 
-def longest_series_of_neighbours(given_list : list):
-    longest_list = []
-    new_list = [given_list[0]]
-    for i in given_list[1::1]:
-        if new_list == []:
-            new_list.append(i)
-        elif i - new_list[-1] == 1 or i - new_list[-1] == -1 :
-            new_list.append(i)
-        elif i - new_list[-1] == 0:
-            new_list = [i]
-        elif i - new_list[-1] != 1 or i - new_list[-1] != -1 :
-            new_list = [i]
+# def longest_series_of_neighbours(given_list : list):
+#     longest_list = []
+#     new_list = [given_list[0]]
+#     for i in given_list[1::1]:
+#         if new_list == []:      # Useless. You already added 1 element in new_list :(
+#             new_list.append(i)
+#         elif i - new_list[-1] == 1 or i - new_list[-1] == -1 :  
+#             new_list.append(i)
+#         elif i - new_list[-1] == 0:   # just an else would be enough
+#             new_list = [i]
+#         elif i - new_list[-1] != 1 or i - new_list[-1] != -1 :
+#             new_list = [i]
                
-        if len(longest_list) < len(new_list):
-            longest_list = new_list
+#         if len(longest_list) < len(new_list):
+#             longest_list = new_list
 
-    return len(longest_list)
+#     return len(longest_list)
+
+
+## OR 
+def longest_series_of_neighbours(given_list : list):
+    mylist = [given_list[0]]
+    longest = 0
+
+    for i in given_list[1:]:
+        if mylist[-1] - i == 1 or mylist[-1] - i == -1:
+            mylist.append(i)
+        else:
+            mylist = [i]
+
+        if len(mylist) > longest:
+            longest = len(mylist)
+    return longest
+
 
 if __name__ == "__main__":
     my_list = [1, 2, 5, 7, 6, 5, 6, 3, 4, 1, 0]
