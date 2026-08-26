@@ -16,21 +16,28 @@
 
 ## Solution:
 
-def oldest_person(people_list : list):
-
 # To access the second element of a tuple stored inside a list, you use the double index notation 
 # list_name[list_index][tuple_index]. 
 # Because Python uses zero-based indexing, the first bracket targets the tuple's position in the list, and the 
 # second bracket [] targets the item inside that specific tuple
 
-    oldest = people_list[0][1]
-    older_person = people_list[0][0]
+# def oldest_person(people_list : list):
+#     oldest = people_list[0][1]
+#     older_person = people_list[0][0]
 
+#     for person in people_list:
+#         if person[1] < oldest:
+#             oldest = person[1]
+#             older_person = person[0]
+#     return older_person
+
+## Another form
+def oldest_person(people_list : list):
+    oldest_person = people_list[0]
     for person in people_list:
-        if person[1] < oldest:
-            oldest = person[1]
-            older_person = person[0]
-    return older_person
+        if person[1] < oldest_person[1]:
+            oldest_person = person
+    return oldest_person[0]
 
 if __name__ == "__main__":
 
